@@ -37,9 +37,9 @@ public class GymBillingCLI {
         }
 
         BigDecimal subtotal = subtotalRes.subtotal();
-        BigDecimal afterGroup = GymBillingDiscounts.applyGroupDiscount(subtotal, members);
-        BigDecimal afterOffer = GymBillingDiscounts.applySpecialOffer(afterGroup);
-        BigDecimal afterSurcharge = GymBillingDiscounts.applyPremiumSurcharge(afterOffer, subtotalRes.hasPremiumExtra());
+        BigDecimal afterGroup = GymQuote.applyGroupDiscount(subtotal, members);
+        BigDecimal afterOffer = GymQuote.applySpecialOffer(afterGroup);
+        BigDecimal afterSurcharge = GymQuote.applyPremiumSurcharge(afterOffer, subtotalRes.hasPremiumExtra());
         int total = GymBilling.roundResult(afterSurcharge);
 
         System.out.println("\n--- Desglose de Facturación ---");
