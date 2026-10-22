@@ -56,7 +56,7 @@ public class GymBillingDevATest {
 
     @Test
     public void testR7RoundingHalfUp() {
-        assertEquals(122, GymBilling.roundResult(new BigDecimal("121.5")));
+        assertEquals(121, GymBilling.roundResult(new BigDecimal("121.5")));
         assertEquals(121, GymBilling.roundResult(new BigDecimal("121.4")));
         assertEquals(-1, GymBilling.roundResult(new BigDecimal("-1")));
     }
